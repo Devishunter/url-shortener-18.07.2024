@@ -1,0 +1,58 @@
+== Task: URL trimming service using Golang and Docker ==
+
+=== Review ===
+You need to create a simple URL service in Golang. The service must provide an API for creating URLs and retrieving the source URLs. Additionally, you need to containerize the application using Docker and use MariaDB as a database to store the congress URLs.
+
+=== Requirements ===
+* '''API endpoints:'''
+** <code>POST /shorten</code>: Accepts a JSON payload with a long URL and returns a shortened URL.
+** <code>GET /{shortURL}</code>: Redirects to the original long URL.
+
+* '''Storage:'''
+** Use MariaDB URL for conventions.
+
+* '''Docker:'''
+** Containerize the application using Docker.
+** Provide a <code>Dockerfile</code> to build the image.
+** Use <code>docker-compose</code> to run the application.
+
+* '''Documentation:'''
+** Provide a README file with people to build and run the application using Docker.
+** Include API documentation with examples of using endpoints.
+
+== Detailed instructions ==
+* '''API Design:'''
+** <code>POST /shorten</code>
+*** Request body: <code>{"url": "https://example.com"</code>
+*** Answer: <code>{"short_url": "http://localhost:8080/abc123"</code>
+** <code>GET /{shortURL</code>
+*** Redirects to the original URL stored for the given short URL.
+
+* '''Golang implementation:'''
+** Create a new Golang project.
+** Implement API endpoints using a framework such as <code>net/http</code>.
+** Use MariaDB URL for conventions.
+** Ensure correct error handling and input validation.
+
+* '''Docker integration:'''
+** Create a <code>Dockerfile</code> to containerize Golang applications.
+** Ensure listening on port <code>8080</code>.
+** Write a <code>docker-compose.yml</code> file to define the service.
+** Provide the ability to start a service using <code>docker-compose up</code>.
+
+* '''Testing:'''
+** Write tests for URL and URL retrieval logic.
+** Ensure that tests run during the Docker build process.
+
+* '''Documentation:'''
+** Write the file <code>README.md</code> with:
+*** Project description
+*** Instructions for building and running an application using Docker.
+*** API documentation with examples
+** Provide comments and documentation in the code to explain the implementation.
+
+=== Expected results ===
+* Golang source code for the service URL.
+* <code>Dockerfile</code> and <code>docker-compose.yml</code> for application containerization.
+* Unit tests for fetch logic and URLs.
+* Complete <code>README.md</code> file with API support and documentation.
